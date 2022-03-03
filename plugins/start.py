@@ -13,9 +13,9 @@ from database.sql import add_user, query_msg, full_userbase
 
 #=====================================================================================##
 
-WAIT_MSG = """"<b>Processing ...</b>"""
+WAIT_MSG = """"<b>Processing 📤 ...</b>"""
 
-REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
+REPLY_ERROR = """<code>⚠️ Use this command as a replay to any telegram message with out any spaces.</code>"""
 
 #=====================================================================================##
 
@@ -57,11 +57,11 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙵𝙸𝙻𝙴𝚂...!")
+        temp_msg = await message.reply("⚜️ 𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝙵𝙸𝙻𝙴𝚂...!")
         try:
             messages = await get_messages(client, ids)
         except:
-            await message.reply_text("𝚂𝚘𝚖𝚎𝚝𝚑𝚒𝚗𝚐 𝚠𝚎𝚗𝚝 𝚠𝚛𝚘𝚗𝚐..!")
+            await message.reply_text("𝚂𝚘𝚖𝚎𝚝𝚑𝚒𝚗𝚐 𝚠𝚎𝚗𝚝 𝚠𝚛𝚘𝚗𝚐 😕..!")
             return
         await temp_msg.delete()
 
@@ -93,8 +93,8 @@ async def start_command(client: Client, message: Message):
                         InlineKeyboardButton("𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴", url="https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA")                        
                     ],
                     [
-                        InlineKeyboardButton("𝙰𝙱𝙾𝚄𝚃", callback_data = "about"),
-                        InlineKeyboardButton("𝙲𝙻𝙾𝚂𝙴", callback_data = "close")
+                        InlineKeyboardButton("👾 𝙰𝙱𝙾𝚄𝚃 👾", callback_data = "about"),
+                        InlineKeyboardButton("☢️ 𝙲𝙻𝙾𝚂𝙴 ☢️", callback_data = "close")
                     ]
                 ]
             )        
@@ -117,7 +117,8 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(
-                "𝙹𝙾𝙸𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻",
+                "🧊 𝙹𝙾𝙸𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 🧊
+",
                 url = client.invitelink)
         ]
     ]
@@ -125,7 +126,7 @@ async def not_joined(client: Client, message: Message):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = '𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽',
+                    text = '❗️𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽 ❗️',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
